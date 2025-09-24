@@ -1,27 +1,17 @@
-# 🚀 Portafolio de Ciberseguridad - Defc0n
+# Metodologías de ataque
 
-¡Bienvenido a mi portafolio!  
-Aquí encontrarás mis proyectos, write-ups y laboratorios relacionados con la ciberseguridad ofensiva, pentesting y QA.
+## Escaneo previo
+**Full TCP (nmap):**
+`nmap -sS -p- -T4 --min-rate 1000 -n -Pn $IP -oA scans/all-ports-$IP`
 
-## 📂 Índice
-1. [Proyectos de Pentesting](#-proyectos-de-pentesting)
-2. [Automatización y Scripts](#-automatización-y-scripts)
-3. [CTFs y Write-ups](#-ctfs-y-write-ups)
-4. [Laboratorios y Herramientas](#-laboratorios-y-herramientas)
+## Escaneo de servicios
+**Servicios + scripts:**
+`nmap -sC -sV -p <puertos> -T4 -n $IP -oA scans/targeted-$IP`
 
----
+## Fuzzing de directorios (web)
+`ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP/FUZZ -o ffuf/dirs-$IP.json -of json -t 40 -mc 200,301,302,403`
 
-## 🔒 Proyectos de Pentesting
-- **[Juice Shop SQLi](proyectos/juiceshop-sqli.md)** → Explotación de SQL Injection en OWASP Juice Shop + propuesta de mitigación.
-- **Escaneo de red con Nmap** → Script automatizado en Python.
+## Fuzzing de subdominios / vhosts
+`ffuf -w /usr/share/wordlists/dns/subdomains-top1million-20000.txt -u http://$IP/ -H "Host: FUZZ.$DOMAIN" -o ffuf/vhosts-$DOMAIN.json -of json -t 40 -mc 200,301,302`
 
-## ⚙️ Automatización y Scripts
-- **[Script Nmap + Python](scripts/nmap-scanner.py)** → Escaneo de un rango de IPs con detección de SO por TTL.
-
-## 🕵️ CTFs y Write-ups
-- **[HackTheBox - Machine X](writeups/htb-machine-x.md)**
-- **[TryHackMe - Room Y](writeups/thm-room-y.md)**
-
-## 🛠️ Laboratorios y Herramientas
-- Instalación y configuración de **Wazuh** en un entorno casero.
-- Laboratorio de **Active Directory** con ataques Kerberos.
+> **Recordatorio:** documentar comandos, salidas y autorización es obligatorio. Uso exclusivo en entornos autorizados.
