@@ -22,7 +22,7 @@ Teniendo la respuesta ingresamos a la ip que nos entrega HTB, en mi caso es la 1
 
 Nos indica que no pudo resolver soulmate.htb
 
-![Ejemplo](assets/1. Ver pagina.png)
+![Login](assets/1.Ver pagina.png)
 
 Ingresamos al archivo hosts e ingresamos la ip y el dominio que nos indica en la pagina
 
