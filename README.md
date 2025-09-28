@@ -1,17 +1,29 @@
-# Metodologías de ataque
+```md
+# Portafolio de CTFs y Pentesting
 
-## Escaneo previo
-**Full TCP (nmap):**
-`nmap -sS -p- -T4 --min-rate 1000 -n -Pn $IP -oA scans/all-ports-$IP`
+Bienvenido a mi portafolio 🚀.  
+Aquí encontrarás los writeups de las máquinas y retos que he resuelto en diferentes plataformas.
 
-## Escaneo de servicios
-**Servicios + scripts:**
-`nmap -sC -sV -p <puertos> -T4 -n $IP -oA scans/targeted-$IP`
+---
 
-## Fuzzing de directorios (web)
-`ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://$IP/FUZZ -o ffuf/dirs-$IP.json -of json -t 40 -mc 200,301,302,403`
+## 📌 Hack The Box
+- [Soulmate](CTF/HTB/soulmate.md)
+- [Otra Máquina](CTF/HTB/otra_maquina.md)
 
-## Fuzzing de subdominios / vhosts
-`ffuf -w /usr/share/wordlists/dns/subdomains-top1million-20000.txt -u http://$IP/ -H "Host: FUZZ.$DOMAIN" -o ffuf/vhosts-$DOMAIN.json -of json -t 40 -mc 200,301,302`
+---
 
-> **Recordatorio:** documentar comandos, salidas y autorización es obligatorio. Uso exclusivo en entornos autorizados.
+## 📌 TryHackMe
+- [Ejemplo Máquina 1](CTF/THM/ejemplo1.md)
+- [Ejemplo Máquina 2](CTF/THM/ejemplo2.md)
+
+---
+
+## 📷 Recursos y Notas
+- [Notas Generales](notas.md)  
+- Ejemplo de imagen local:  
+  ![Mi prueba](assets/foto1.png)
+
+---
+
+✍️ *Este portafolio está en construcción. Se irán agregando más máquinas pronto.*
+```
