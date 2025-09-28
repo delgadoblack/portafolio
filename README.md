@@ -1,4 +1,3 @@
-```md
 # Portafolio de CTFs y Pentesting
 
 Bienvenido a mi portafolio 🚀.  
@@ -26,4 +25,3 @@ Aquí encontrarás los writeups de las máquinas y retos que he resuelto en dife
 ---
 
 ✍️ *Este portafolio está en construcción. Se irán agregando más máquinas pronto.*
-```
