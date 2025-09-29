@@ -157,7 +157,7 @@ sudo nano /etc/hosts
 
 recargamos la pagina y ya deberiamos tener acceso al ftp
 
-![POC CrushFTP](../../assets/4. POC-CrushFTP.png)
+![CrushFTP login](../../assets/2.1 ftp-site-login.png)
 
 En caso de no cargar probar con la combinacion de teclas Ctrl+F5 para recargar cache.
 
@@ -171,7 +171,7 @@ Fuente: https://s2grupo.es/vulnerabilidades-crushftp-2025/
 
 Realizamos otra busqueda en google con la CVE: CVE-2025-31161 y vemos que en github hay una POC en python para usarse
 
-
+![POC-CrushFTP](../../assets4. POC-CrushFTP.png)
 
 Descargamos la POC y la ejecutamos:
 
@@ -221,13 +221,13 @@ Respuesta:
 
 Tenemos el usuario creado, ahora validamos el acceso:
 
-#Insertar imagen
+![Dentro de CrushFTP](../../assets/5. Dentro de CrushFTP.png)
 
 Empezamos a navegar en el portal y lo primero que vemos es la opcion de Admin, dentro de esta opcion navegamos por el menu hasta que llegamos a la parte de User Manager. Donde podemos ver los usuarios registrados hasta el momento.
 
 Probaremos con el primer usuario a ver si le podemos cambiar la password y presionamos en Save:
 
-#Insertar imagen
+![Cambio de pass de usuario](../../assets/6. Cambiar password a usuario.png)
 
 
 > **Recordatorio:** documentar comandos, salidas y autorización es obligatorio. Uso exclusivo en entornos autorizados.
