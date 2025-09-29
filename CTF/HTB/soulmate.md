@@ -171,7 +171,7 @@ Fuente: https://s2grupo.es/vulnerabilidades-crushftp-2025/
 
 Realizamos otra busqueda en google con la CVE: CVE-2025-31161 y vemos que en github hay una POC en python para usarse
 
-![POC-CrushFTP](../../assets4. POC-CrushFTP.png)
+![POC-CrushFTP](../../assets/4. POC-CrushFTP.png)
 
 Descargamos la POC y la ejecutamos:
 
