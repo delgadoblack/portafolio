@@ -22,7 +22,7 @@ Teniendo la respuesta ingresamos a la ip que nos entrega HTB, en mi caso es la 1
 
 Nos indica que no pudo resolver soulmate.htb
 
-![Login](../../assets/1.Ver pagina.png)
+![No se puede acceder a este sitio](../../assets/1.Ver pagina.png)
 
 Ingresamos al archivo hosts e ingresamos la ip y el dominio que nos indica en la pagina
 
@@ -36,7 +36,7 @@ sudo nano /etc/hosts
 
 Recargamos la pagina y deberiamos ya poder ver el inicio:
 
-###INgresar imagen
+![Index](../../assets/2. Inicio pagina.png)
 
 
 Realizamos un escaneo en nmap y en paralelo haremos escaneos de directorios y subdominios
@@ -143,7 +143,7 @@ Ingresamos a cada uno de los directorios para verificar algun heartbleed pero no
 
 Intentamos acceder al ftp del sitio: ftp.soulmate.htb
 
-#Insertar imagen
+![FTP server](../../assets/3. ftp-site.png)
 
 Agregamos el ftp al archivo hosts.
 
@@ -157,7 +157,7 @@ sudo nano /etc/hosts
 
 recargamos la pagina y ya deberiamos tener acceso al ftp
 
-#Insertar imagen
+![POC CrushFTP](../../assets/4. POC-CrushFTP.png)
 
 En caso de no cargar probar con la combinacion de teclas Ctrl+F5 para recargar cache.
 
@@ -171,7 +171,7 @@ Fuente: https://s2grupo.es/vulnerabilidades-crushftp-2025/
 
 Realizamos otra busqueda en google con la CVE: CVE-2025-31161 y vemos que en github hay una POC en python para usarse
 
-#Insertar imagen
+
 
 Descargamos la POC y la ejecutamos:
 
