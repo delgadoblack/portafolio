@@ -1,7 +1,8 @@
 # 🗃️ Cheatsheet: Enumeración Post-Explotación en Linux
 
-[Regresar a write up Soulmate](HTB/soulmate.md)
-[Regresar al inicio](../../portafolio.md)
+[Regresar a WriteUp Soulmate](HTB/soulmate.md)
+
+[Regresar al inicio](../../portafolio)
 
 Esta guía metodológica cubre las áreas críticas de un sistema Linux comprometido, enfocada en la recolección de información para la **Escalada de Privilegios** y el **Movimiento Lateral**.
 
@@ -110,7 +111,8 @@ chmod +x linpeas.sh
 ./linpeas.sh 2>&1 | tee linpeas-output.txt
 ```
 
-[Regresar a write up Soulmate](HTB/soulmate.md)
-[Regresar al inicio](../../portafolio.md)
+[Regresar a WriteUp Soulmate](HTB/soulmate.md)
+
+[Regresar al inicio](../../portafolio)
 
 > **NOTA:** Ejecuta **LinPEAS** como el usuario con menos privilegios que has obtenido para que los resultados reflejen exactamente los vectores de escalada *accesibles* desde ese contexto.
