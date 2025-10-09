@@ -614,6 +614,6 @@ Salida: "root.txt\nscripts\n"
 
 Ahora ejecutamos el comando `os:cmd("cat /root/root.txt")` y deberiamos tener la flag del usuario root.
 
-![Flag user Root](../../assets/17. CTF root.png)
+![Flag user Root](../../assets/17. CTF user root.png)
 
 > **Recordatorio:** documentar comandos, salidas y autorización es obligatorio. Uso exclusivo en entornos autorizados.
