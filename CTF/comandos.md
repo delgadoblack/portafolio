@@ -53,8 +53,6 @@ El análisis de procesos puede exponer tareas que se ejecutan como `root` o scri
 | **Archivos Abiertos por PID** | `lsof -p <PID>` (Útil para revisar procesos **php-fpm** o web) |
 | **Procesos con Capacidades** | `for pid in $(ps -e -o pid=); do caps=$(grep -s CapEff /proc/$pid/status 2>/dev/null); [ -n "$caps" ] && printf "PID %s: %s\n" "$pid" "$caps"; done` |
 
----
-
 ### 3.2 Tareas Programadas (Cron/Systemd Timers)
 | Objetivo | Comando(s) |
 | :--- | :--- |
@@ -75,8 +73,6 @@ La búsqueda de credenciales *hardcoded* o archivos de configuración sensibles 
 | **Cuentas Locales** | `cat /etc/passwd` |
 | **Usuarios Conectados** | `w` (o `who`) |
 | **Revisión de Logs** | `tail -n 200 /var/log/auth.log` <br> `ls -l /var/log` (Buscar actividad reciente o nombres inusuales) |
-
----
 
 ### 4.2 Transferencia de Archivos
 Herramientas básicas para mover *exploits*, *shells* o herramientas de enumeración (como LinPEAS) hacia y desde el objetivo.
