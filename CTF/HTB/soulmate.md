@@ -22,7 +22,7 @@ Teniendo la respuesta ingresamos a la ip que nos entrega HTB, en mi caso es la 1
 
 Nos indica que no pudo resolver soulmate.htb
 
-![No se puede acceder a este sitio](../../assets/1.Ver pagina.png)
+![No se puede acceder a este sitio](../../assets/1. Ver pagina.png)
 
 Ingresamos al archivo hosts e ingresamos la ip y el dominio que nos indica en la pagina
 
@@ -287,7 +287,7 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 Con esto el simbolo `$` deberia cambiar a `www-data@soulmate:~/soulmate.htb/public$ `
 
-Y empezaremos los primeros comandos para saber donde estamos y que usuario somos, para eso podemos ver los comandos que nos puedan servir aqui: [Comandos dentro de un servidor](../)
+Y empezaremos los primeros comandos para saber donde estamos y que usuario somos, para eso podemos ver los comandos que nos puedan servir aqui: [Comandos dentro de un servidor](../comandos.md)
 
 Datos del servidor:
 
