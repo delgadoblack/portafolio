@@ -572,6 +572,8 @@ Ingresamos el comando `sudo -l` para verificar los archivos o comandos a los que
 
 Viendo que no tenemos accesos, verificamos la carpeta root si podemos entrar y nos encontramos con `bash: cd: /root: Permission denied`
 
+![Permiso denegado folder root](../../16. Intento de entrada a carpeta root.png)
+
 Revisando de nuevo el `erlang_ssh.service` vemos que al final del archivo tenemos
 <pre>
         {ok, _Pid} ->
