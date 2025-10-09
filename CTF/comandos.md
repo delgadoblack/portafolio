@@ -46,6 +46,7 @@ La enumeración de la red es crucial para detectar servicios locales que no son 
 El análisis de procesos puede exponer tareas que se ejecutan como `root` o scripts que manejan datos sensibles.
 
 ### 3.1 Procesos en Ejecución
+
 | Objetivo | Comando(s) |
 | :--- | :--- |
 | **Listado Jerárquico** | `ps auxwwf` <br> `pstree -pau` |
@@ -54,6 +55,7 @@ El análisis de procesos puede exponer tareas que se ejecutan como `root` o scri
 | **Procesos con Capacidades** | `for pid in $(ps -e -o pid=); do caps=$(grep -s CapEff /proc/$pid/status 2>/dev/null); [ -n "$caps" ] && printf "PID %s: %s\n" "$pid" "$caps"; done` |
 
 ### 3.2 Tareas Programadas (Cron/Systemd Timers)
+
 | Objetivo | Comando(s) |
 | :--- | :--- |
 | **Crontab del Usuario Actual** | `crontab -l 2>/dev/null` |
@@ -68,6 +70,7 @@ El análisis de procesos puede exponer tareas que se ejecutan como `root` o scri
 La búsqueda de credenciales *hardcoded* o archivos de configuración sensibles es una prioridad.
 
 ### 4.1 Ficheros de Logs y Usuarios
+
 | Objetivo | Comando(s) |
 | :--- | :--- |
 | **Cuentas Locales** | `cat /etc/passwd` |
@@ -75,6 +78,7 @@ La búsqueda de credenciales *hardcoded* o archivos de configuración sensibles 
 | **Revisión de Logs** | `tail -n 200 /var/log/auth.log` <br> `ls -l /var/log` (Buscar actividad reciente o nombres inusuales) |
 
 ### 4.2 Transferencia de Archivos
+
 Herramientas básicas para mover *exploits*, *shells* o herramientas de enumeración (como LinPEAS) hacia y desde el objetivo.
 
 | Método | Comando de Descarga (Cliente) | Comando de Servidor Simple (Atacante) |
