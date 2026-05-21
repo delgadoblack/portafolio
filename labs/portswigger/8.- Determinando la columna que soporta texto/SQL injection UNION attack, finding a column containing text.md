@@ -1,6 +1,46 @@
-[SQL injection UNION attack, finding a column containing text](https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text)
-Iniciando en el laboratorio nos indica que la BD debe devolver el valor subrayado en rojo
-![[Pasted image 20260331175952.png]]
+# SQL Injection UNION Attack - Finding a Column Containing Text
 
-Ya identificamos que son 3 columnas, por lo que deberia ser la misma sentencia e ir iterando con el valor que nos indica el laboratorio hasta encontrar el que soporta el String, que en este caso es la segunda columna:
-![[Pasted image 20260331180202.png]]
+## 📌 Lab Information
+
+- **Lab:** Finding a Column Containing Text
+- **Categoría:** UNION SQL Injection
+
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/union-attacks/lab-find-column-containing-text)
+
+---
+
+## 🎯 Objetivo
+
+Identificar qué columna permite mostrar datos tipo string.
+
+---
+
+## 🔍 Información inicial
+
+El laboratorio indica que debemos recuperar un valor específico.
+
+![Valor objetivo](Imagenes/pasted-image-20260331175952.png)
+
+---
+
+## 🚀 Enumeración de columnas
+
+Ya sabemos que existen 3 columnas:
+
+```sql
+' union select null,null,null -- -
+```
+
+Ahora iteramos colocando strings:
+
+```sql
+' union select null,'test',null -- -
+```
+
+---
+
+## ✅ Resultado
+
+La segunda columna soporta texto.
+
+![Columna string](Imagenes/pasted-image-20260331180202.png)
