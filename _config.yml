@@ -3,3 +3,10 @@ title: "Portafolio de Ciberseguridad"
 description: "Pentesting | QA | Scripts | CTFs"
 show_downloads: false
 google_analytics:
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
