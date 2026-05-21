@@ -16,7 +16,7 @@ Writeups de laboratorios resueltos de PortSwigger Web Security Academy.
 
 [5-Listando-contenido-en-bases-de-datos-no-Oracle](./5-listando-contenido-en-bases-de-datos-no-Oracle/SQL-injection-attack,-listing-the-database-contents-on-non-Oracle-databases.md)
 
-[6-Listando-contenido-de-bases-de-datos-en-Oracle](./6.-listando-contenido-de-bases-de-datos-en-Oracle/SQL-injection-attack,-listing-the-database-contents-on-non-Oracle-databases.md)
+[6-Listando-contenido-de-bases-de-datos-en-Oracle](./6-listando-contenido-de-bases-de-datos-en-Oracle/SQL-injection-attack,-listing-the-database-contents-on-non-Oracle-databases.md)
 
 [7-Determinando-número-de-columnas](./7-Determinando-numero-de-columnas/Determine-Number-of-Columns.md)
 
