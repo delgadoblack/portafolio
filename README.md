@@ -18,12 +18,12 @@ Writeups y análisis técnicos de vulnerabilidades web.
 
 ### Categorías
 - SQL Injection
-- Cross-Site Scripting (XSS)
-- Server-Side Request Forgery (SSRF)
-- Authentication Bypass
-- Access Control
-- XXE
-- CSRF
+- Cross-Site Scripting (XSS) (Pendiente a subir)
+- Server-Side Request Forgery (SSRF) (Pendiente a subir)
+- Authentication Bypass (Pendiente a subir)
+- Access Control (Pendiente a subir)
+- XXE (Pendiente a subir)
+- CSRF (Pendiente a subir)
 
 📁 Ruta:
 ```text
@@ -42,16 +42,6 @@ Resolución de máquinas orientadas a:
 
 ### Máquinas
 - [Soulmate](CTF/HTB/soulmate.md)
-- [Otra Máquina](CTF/HTB/otra_maquina.md)
-
----
-
-## 🚩 TryHackMe
-Laboratorios prácticos y rutas de aprendizaje.
-
-### Máquinas
-- [Ejemplo Máquina 1](CTF/THM/ejemplo1.md)
-- [Ejemplo Máquina 2](CTF/THM/ejemplo2.md)
 
 ---
 
