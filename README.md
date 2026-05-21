@@ -26,9 +26,7 @@ Writeups y análisis técnicos de vulnerabilidades web.
 - CSRF (Pendiente a subir)
 
 📁 Ruta:
-```text
-labs/portswigger/
-```
+- [Writeups PortSwigger](labs/portswigger/index.md)
 
 ---
 
