@@ -20,7 +20,7 @@ Explotar una vulnerabilidad Blind SQL Injection para obtener la contraseña del 
 
 Abrimos Burp Suite y activamos el proxy.
 
-![Burp Proxy](../Imagenes/pasted-image-20260406123145.png)
+![Burp Proxy](./Imagenes/pasted-image-20260406123145.png)
 
 Enviamos la petición al módulo Repeater con:
 
@@ -28,7 +28,7 @@ Enviamos la petición al módulo Repeater con:
 CTRL + R
 ```
 
-![Repeater](../Imagenes/pasted-image-20260406123205.png)
+![Repeater](./Imagenes/pasted-image-20260406123205.png)
 
 ---
 
@@ -40,7 +40,7 @@ Cuando la condición es correcta, el servidor responde con:
 Welcome Back
 ```
 
-![Welcome Back](../Imagenes/pasted-image-20260406123252.png)
+![Welcome Back](./Imagenes/pasted-image-20260406123252.png)
 
 ---
 
@@ -58,7 +58,7 @@ Debemos URL Encodear el payload utilizando:
 CTRL + U
 ```
 
-![Payload URL Encode](../Imagenes/pasted-image-20260406123423.png)
+![Payload URL Encode](./Imagenes/pasted-image-20260406123423.png)
 
 ---
 
@@ -68,7 +68,7 @@ CTRL + U
 ' union select username from users where username='administrator' -- -
 ```
 
-![Validación usuario](../Imagenes/pasted-image-20260406123621.png)
+![Validación usuario](./Imagenes/pasted-image-20260406123621.png)
 
 ---
 
@@ -86,7 +86,7 @@ Enviamos la petición a Intruder:
 CTRL + I
 ```
 
-![Intruder](../Imagenes/pasted-image-20260406125122.png)
+![Intruder](./Imagenes/pasted-image-20260406125122.png)
 
 ---
 
@@ -98,7 +98,7 @@ Tipo de ataque:
 Sniper
 ```
 
-![Sniper](../Imagenes/pasted-image-20260406125136.png)
+![Sniper](./Imagenes/pasted-image-20260406125136.png)
 
 ---
 
@@ -108,7 +108,7 @@ Sniper
 - From: 1
 - To: 30
 
-![Payload Numbers](../Imagenes/pasted-image-20260406125233.png)
+![Payload Numbers](./Imagenes/pasted-image-20260406125233.png)
 
 ---
 
@@ -120,7 +120,7 @@ Agregamos:
 Welcome Back
 ```
 
-![Grep Match](../Imagenes/pasted-image-20260406125345.png)
+![Grep Match](./Imagenes/pasted-image-20260406125345.png)
 
 ---
 
@@ -132,7 +132,7 @@ La contraseña tiene:
 20 caracteres
 ```
 
-![Length Password](../Imagenes/pasted-image-20260406125602.png)
+![Length Password](./Imagenes/pasted-image-20260406125602.png)
 
 ---
 
@@ -154,7 +154,7 @@ Tipo de ataque:
 Cluster Bomb
 ```
 
-![Cluster Bomb](../Imagenes/pasted-image-20260406165808.png)
+![Cluster Bomb](./Imagenes/pasted-image-20260406165808.png)
 
 ---
 
@@ -164,7 +164,7 @@ Payload 1:
 - Numbers
 - 1 → 20
 
-![Payload Position](../../Imagenes/pasted-image-20260406170349.png)
+![Payload Position](././Imagenes/pasted-image-20260406170349.png)
 
 ---
 
@@ -173,19 +173,19 @@ Payload 1:
 Payload 2:
 - Brute Forcer
 
-![Payload Characters](../Imagenes/pasted-image-20260406170510.png)
+![Payload Characters](./Imagenes/pasted-image-20260406170510.png)
 
 ---
 
 ## ✅ Enumeración
 
-![Enumeración Password](../Imagenes/pasted-image-20260407004024.png)
+![Enumeración Password](./Imagenes/pasted-image-20260407004024.png)
 
 ---
 
 ## 🔓 Acceso administrador
 
-![Login exitoso](../Imagenes/pasted-image-20260407004121.png)
+![Login exitoso](./Imagenes/pasted-image-20260407004121.png)
 
 ---
 
