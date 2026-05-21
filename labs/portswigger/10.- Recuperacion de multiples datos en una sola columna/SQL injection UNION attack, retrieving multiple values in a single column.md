@@ -31,13 +31,13 @@ Debemos concatenar:
 ' union select null,username || '-' || password from users -- -
 ```
 
-![Concatenación credenciales](Imagenes/pasted-image-20260403211626.png)
+![Concatenación credenciales](../Imagenes/pasted-image-20260403211626.png)
 
 ---
 
 ## 🔓 Acceso administrador
 
-![Login administrador](Imagenes/pasted-image-20260403211716.png)
+![Login administrador](../Imagenes/pasted-image-20260403211716.png)
 
 ---
 

@@ -27,7 +27,7 @@ Probamos con comilla simple:
 '
 ```
 
-![Error SQL](Imagenes/pasted-image-20260427194341.png)
+![Error SQL](../Imagenes/pasted-image-20260427194341.png)
 
 ---
 
@@ -39,7 +39,7 @@ Probamos con doble comilla:
 ''
 ```
 
-![200 OK](Imagenes/pasted-image-20260427194452.png)
+![200 OK](../Imagenes/pasted-image-20260427194452.png)
 
 Esto confirma:
 - SQL Injection
@@ -56,13 +56,13 @@ Payload funcional:
 '||(SELECT '' FROM dual)||'
 ```
 
-![Payload Oracle](Imagenes/pasted-image-20260430143630.png)
+![Payload Oracle](../Imagenes/pasted-image-20260430143630.png)
 
 ---
 
 ## 🚀 Tabla inexistente
 
-![Error 500](Imagenes/pasted-image-20260430143819.png)
+![Error 500](../Imagenes/pasted-image-20260430143819.png)
 
 El error 500 confirma que:
 - la consulta se ejecuta
@@ -94,7 +94,7 @@ ELSE NULL END FROM dual)||
 Resultado:
 - HTTP 500
 
-![Condición verdadera](Imagenes/pasted-image-20260521130636.png)
+![Condición verdadera](../Imagenes/pasted-image-20260521130636.png)
 
 ---
 
@@ -109,7 +109,7 @@ ELSE NULL END FROM dual)||
 Resultado:
 - HTTP 200
 
-![Condición falsa](Imagenes/pasted-image-20260521130713.png)
+![Condición falsa](../Imagenes/pasted-image-20260521130713.png)
 
 ---
 
@@ -124,7 +124,7 @@ THEN TO_CHAR(1/0)
 ELSE NULL END FROM dual)||
 ```
 
-![Administrador existe](Imagenes/pasted-image-20260521131114.png)
+![Administrador existe](../Imagenes/pasted-image-20260521131114.png)
 
 ---
 
@@ -140,7 +140,7 @@ THEN TO_CHAR(1/0)
 ELSE NULL END FROM dual)||
 ```
 
-![Length Password](Imagenes/pasted-image-20260521131723.png)
+![Length Password](../Imagenes/pasted-image-20260521131723.png)
 
 ---
 
@@ -167,11 +167,11 @@ Configuramos:
 - Payloads
 - Grep Match
 
-![Position 1](Imagenes/pasted-image-20260521131822.png)
+![Position 1](../Imagenes/pasted-image-20260521131822.png)
 
-![Position 2](Imagenes/pasted-image-20260521131838.png)
+![Position 2](../Imagenes/pasted-image-20260521131838.png)
 
-![Grep Match](Imagenes/pasted-image-20260521131929.png)
+![Grep Match](../Imagenes/pasted-image-20260521131929.png)
 
 ---
 
@@ -181,15 +181,15 @@ Configuramos:
 3yaj68vg3yb1pfoohq6g
 ```
 
-![Password encontrada](Imagenes/pasted-image-20260521125945.png)
+![Password encontrada](../Imagenes/pasted-image-20260521125945.png)
 
 ---
 
 ## 🔓 Acceso administrador
 
-![Login administrador](Imagenes/pasted-image-20260521130154.png)
+![Login administrador](../Imagenes/pasted-image-20260521130154.png)
 
-![Laboratorio resuelto](Imagenes/pasted-image-20260521130303.png)
+![Laboratorio resuelto](../Imagenes/pasted-image-20260521130303.png)
 
 ---
 

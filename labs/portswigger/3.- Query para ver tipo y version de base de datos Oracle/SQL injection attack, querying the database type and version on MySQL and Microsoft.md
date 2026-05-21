@@ -28,7 +28,7 @@ Comenzamos enumerando columnas:
 
 Resultado:
 
-![Error una columna](Imagenes/pasted-image-20260329200148.png)
+![Error una columna](../Imagenes/pasted-image-20260329200148.png)
 
 ---
 
@@ -40,7 +40,7 @@ Agregamos otra columna:
 
 Resultado exitoso:
 
-![Dos columnas válidas](Imagenes/pasted-image-20260329200307.png)
+![Dos columnas válidas](../Imagenes/pasted-image-20260329200307.png)
 
 ---
 
@@ -52,7 +52,7 @@ Probamos una tercera columna:
 
 Resultado:
 
-![Error tercera columna](Imagenes/pasted-image-20260329200508.png)
+![Error tercera columna](../Imagenes/pasted-image-20260329200508.png)
 
 ---
 
@@ -74,7 +74,7 @@ Payload final:
 
 Resultado:
 
-![Versión Oracle](Imagenes/pasted-image-20260329201237.png)
+![Versión Oracle](../Imagenes/pasted-image-20260329201237.png)
 
 ---
 
