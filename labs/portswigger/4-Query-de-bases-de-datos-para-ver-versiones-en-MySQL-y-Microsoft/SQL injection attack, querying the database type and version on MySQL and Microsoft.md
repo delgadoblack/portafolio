@@ -29,7 +29,7 @@ El comentario `#` debe ir URL Encoded:
 ' UNION SELECT null,null%23
 ```
 
-![Enumeración columnas](../../../Imagenes/pasted-image-20260329212129.png)
+![Enumeración columnas](Imagenes/pasted-image-20260329212129.png)
 
 ---
 
@@ -49,7 +49,7 @@ Payload final:
 
 Resultado:
 
-![Versión BD](../../../Imagenes/pasted-image-20260329212223.png)
+![Versión BD](Imagenes/pasted-image-20260329212223.png)
 
 ---
 

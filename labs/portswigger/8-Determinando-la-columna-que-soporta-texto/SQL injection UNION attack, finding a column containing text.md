@@ -19,7 +19,7 @@ Identificar qué columna permite mostrar datos tipo string.
 
 El laboratorio indica que debemos recuperar un valor específico.
 
-![Valor objetivo](../../../Imagenes/pasted-image-20260331175952.png)
+![Valor objetivo](Imagenes/pasted-image-20260331175952.png)
 
 ---
 ## 🚀 Enumeración de columnas
@@ -42,4 +42,4 @@ Ahora iteramos colocando strings:
 
 La segunda columna soporta texto.
 
-![Columna string](../../../Imagenes/pasted-image-20260331180202.png)
+![Columna string](Imagenes/pasted-image-20260331180202.png)
