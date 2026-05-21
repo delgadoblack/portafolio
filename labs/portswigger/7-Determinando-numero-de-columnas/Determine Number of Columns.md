@@ -37,7 +37,7 @@ Payload final:
 ' union select null,null,null -- -
 ```
 
-![Tres columnas](../../../../Imagenes/pasted-image-20260331174428.png)
+![Tres columnas](../../../Imagenes/pasted-image-20260331174428.png)
 
 ---
 

