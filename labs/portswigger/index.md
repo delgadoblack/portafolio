@@ -30,6 +30,8 @@ Writeups de laboratorios resueltos de PortSwigger Web Security Academy.
 
 [12-Blind-SQL-con-errores-condicionales](./12-Blind-SQL-con-errores-condicionales/Blind-SQL-injection-with-conditional-errors.md)
 
+[13-Errores visibles basados en SQL Injection](./13-Visible-error-based-SQL-injection.md)
+
 ---
 
 ## Próximamente
