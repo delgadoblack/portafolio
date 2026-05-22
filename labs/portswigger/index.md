@@ -32,11 +32,13 @@ Writeups de laboratorios resueltos de PortSwigger Web Security Academy.
 
 [13-Errores-visibles-basados-en-SQL-Injection](./13-Errores-visibles-basados-en-SQL-Injection/Visible-error-based-SQL-injection.md)
 
+[14-Blind-SQL-injection-con-tiempos-de-retraso](./14-Blind-SQL-injection-con-tiempos-de-retraso/Blind-SQL-injection-with-time-delays.md)
+
 ---
 
 ## Próximamente
 
-- Blind SQL time delays
+- Blind SQL time delays (en progreso)
 - Out-of-band SQLi
 - NoSQL Injection
 - XXE
