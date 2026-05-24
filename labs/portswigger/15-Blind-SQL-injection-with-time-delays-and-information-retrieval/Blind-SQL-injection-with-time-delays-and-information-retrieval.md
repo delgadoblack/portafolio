@@ -10,7 +10,7 @@
 | **Motor de base de datos** | PostgreSQL |
 | **Plataforma** | PortSwigger Web Security Academy |
 
-🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/blind/lab-time-delays)
+🔗 [Acceder al laboratorio](https://portswigger.net/web-security/sql-injection/blind/lab-time-delays-info-retrieval)
 
 ---
 
