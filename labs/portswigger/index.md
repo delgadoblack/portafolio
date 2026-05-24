@@ -34,6 +34,9 @@ Writeups de laboratorios resueltos de PortSwigger Web Security Academy.
 
 [14-Blind-SQL-injection-con-tiempos-de-retraso](./14-Blind-SQL-injection-con-tiempos-de-retraso/Blind-SQL-injection-with-time-delays.md)
 
+
+[15-Blind SQL injection with time delays and information retrieval](./15-Blind-SQL-injection-with-time-delays-and-information-retrieval/Blind-SQL-injection-with-time-delays-and-information-retrieval.md)
+
 ---
 
 ## Próximamente
