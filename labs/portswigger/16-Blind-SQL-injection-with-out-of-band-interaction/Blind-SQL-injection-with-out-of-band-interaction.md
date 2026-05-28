@@ -108,7 +108,6 @@ O mas rapido, selecciono todo el valor de `TrackingId` y presiono la combinacion
 
 ---
 
-```html
 ## Pruebas con cada motor
 
 ### MSSQL
@@ -176,7 +175,6 @@ O mas rapido, selecciono todo el valor de `TrackingId` y presiono la combinacion
 ---
 
 > ✅ Se obtiene interacción en Burp Collaborator únicamente con el payload Oracle, confirmando vulnerabilidad a Out-of-Band SQL Injection mediante este motor.
-```
 
 
 ## ✅ Resultado
