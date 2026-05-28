@@ -108,67 +108,76 @@ O mas rapido, selecciono todo el valor de `TrackingId` y presiono la combinacion
 
 ---
 
-## Pruebas con cada motor:
+```html
+## Pruebas con cada motor
 
-### MSSQL:
-
-<div style="border:1px solid gray; padding:10px; border-radius:8px;">
-
-### Envio la peticion: 
-
-
-![URL Encode MSSQL](Imagenes/image.png)
-
-### Valido en Collaborator presionando en `Poll now`:
-
-
-![Collaborator Poll Now](Imagenes/image-1.png)
-
-</div>
-
-### MySQL:
+### MSSQL
 
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-### Envio la peticion:
+<h4>Envío de la petición</h4>
 
-![URL Encode MySQL](Imagenes/image-2.png)
+<img src="Imagenes/image.png" alt="URL Encode MSSQL">
 
-### Valido en Collaborator presionando en `Poll now`:
+<h4>Validación en Collaborator presionando en <code>Poll now</code></h4>
 
-![Collaborator Poll Now](Imagenes/image-1.png)
+<img src="Imagenes/image-1.png" alt="Collaborator Poll Now">
 
 </div>
 
-### PostgreSQL:
+---
+
+### MySQL
 
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-### Envio la peticion
+<h4>Envío de la petición</h4>
 
-![URL Encode PostgreSQL](Imagenes/image-3.png)
+<img src="Imagenes/image-2.png" alt="URL Encode MySQL">
 
-### Valido en Collaborator presionando en `Poll now`:
+<h4>Validación en Collaborator presionando en <code>Poll now</code></h4>
 
-![Collaborator Poll Now](Imagenes/image-1.png)
+<img src="Imagenes/image-1.png" alt="Collaborator Poll Now">
 
 </div>
 
+---
 
-### Oracle:
+### PostgreSQL
+
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-### Envio la peticion
+<h4>Envío de la petición</h4>
 
-![URL Encode Oracle](Imagenes/image-4.png)
+<img src="Imagenes/image-3.png" alt="URL Encode PostgreSQL">
 
-### Valido en Collaborator presionando en `Poll now`:
+<h4>Validación en Collaborator presionando en <code>Poll now</code></h4>
 
-![Collaborator con respuesta](Imagenes/image-5.png)
+<img src="Imagenes/image-1.png" alt="Collaborator Poll Now">
 
 </div>
 
-### Obtengo respuesta en el collaborator, por lo que es vulnerable a esta tecnica.
+---
+
+### Oracle
+
+<div style="border:1px solid gray; padding:10px; border-radius:8px;">
+
+<h4>Envío de la petición</h4>
+
+<img src="Imagenes/image-4.png" alt="URL Encode Oracle">
+
+<h4>Validación en Collaborator presionando en <code>Poll now</code></h4>
+
+<img src="Imagenes/image-5.png" alt="Collaborator con respuesta">
+
+</div>
+
+---
+
+> ✅ Se obtiene interacción en Burp Collaborator únicamente con el payload Oracle, confirmando vulnerabilidad a Out-of-Band SQL Injection mediante este motor.
+```
+
 
 ## ✅ Resultado
 
