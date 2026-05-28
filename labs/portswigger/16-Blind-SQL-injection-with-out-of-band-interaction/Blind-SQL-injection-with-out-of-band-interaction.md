@@ -114,15 +114,13 @@ O mas rapido, selecciono todo el valor de `TrackingId` y presiono la combinacion
 
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-```text
-Envio la peticion: 
-```
+### Envio la peticion: 
+
 
 ![URL Encode MSSQL](Imagenes/image.png)
 
-```text
-Valido en Collaborator presionando en `Poll now`:
-```
+### Valido en Collaborator presionando en `Poll now`:
+
 
 ![Collaborator Poll Now](Imagenes/image-1.png)
 
@@ -132,14 +130,11 @@ Valido en Collaborator presionando en `Poll now`:
 
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-```text
-Envio la peticion:
-```
+### Envio la peticion:
+
 ![URL Encode MySQL](Imagenes/image-2.png)
 
-```text
-Valido en Collaborator presionando en `Poll now`:
-```
+### Valido en Collaborator presionando en `Poll now`:
 
 ![Collaborator Poll Now](Imagenes/image-1.png)
 
@@ -149,15 +144,11 @@ Valido en Collaborator presionando en `Poll now`:
 
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-```text
-Envio la peticion
-```
+### Envio la peticion
 
 ![URL Encode PostgreSQL](Imagenes/image-3.png)
 
-```text
-Valido en Collaborator presionando en `Poll now`:
-```
+### Valido en Collaborator presionando en `Poll now`:
 
 ![Collaborator Poll Now](Imagenes/image-1.png)
 
@@ -167,23 +158,17 @@ Valido en Collaborator presionando en `Poll now`:
 ### Oracle:
 <div style="border:1px solid gray; padding:10px; border-radius:8px;">
 
-```text
-Envio la peticion
-```
+### Envio la peticion
 
 ![URL Encode Oracle](Imagenes/image-4.png)
 
-```text
-Valido en Collaborator presionando en `Poll now`:
-```
+### Valido en Collaborator presionando en `Poll now`:
 
 ![Collaborator con respuesta](Imagenes/image-5.png)
 
 </div>
 
-```text
-Obtengo respuesta en el collaborator, por lo que es vulnerable a esta tecnica.
-```
+### Obtengo respuesta en el collaborator, por lo que es vulnerable a esta tecnica.
 
 ## ✅ Resultado
 
