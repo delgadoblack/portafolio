@@ -46,8 +46,8 @@ Resolución de máquinas orientadas a:
 ## ⚙️ Automatización y Scripts
 Automatizaciones:
 
-- [LLM-as-a-judge con ChatBot](https://github.com/delgadoblack/llm-eval-framework)
-- [imdb-qa-challenge con Playwright](https://github.com/delgadoblack/imdb-qa-challenge)
+- [LLM-as-a-judge con ChatBot](https://github.com/delgadoblack/llm-eval-framework/blob/main/README.md)
+- [imdb-qa-challenge con Playwright](https://github.com/delgadoblack/imdb-qa-challenge/blob/main/README.md)
 
 Scripts orientados a:
 - Fuzzing
